@@ -14,11 +14,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.concurrent.Callable;
 
 @Command(name = "gendiff", mixinStandardHelpOptions = true, version = "gendiff 1.0",
         description = "Compares two configuration files and shows a difference.")
 
-public class App implements Runnable {
+public class App implements Callable<Integer> {
 
     @Parameters(index = "0", description = "path to first file", paramLabel = "filepath1")
     private String filepath1;
@@ -30,15 +31,16 @@ public class App implements Runnable {
     private String format;
 
     @Override
-    public void run() {
+    public Integer call() {
         try {
             Map<String, Object> data1 = readFile(filepath1);
             Map<String, Object> data2 = readFile(filepath2);
-            System.out.println(data1);
-            System.out.println(data2);
+            String diff = Differ.generate(data1, data2);
+            System.out.println(diff);
+            return 0;
         } catch (Exception e) {
             System.err.println("Error: " + e.getMessage());
-            System.exit(1);
+            return 1;
         }
     }
 
