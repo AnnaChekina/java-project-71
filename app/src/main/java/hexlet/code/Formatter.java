@@ -55,7 +55,7 @@ public class Formatter {
         if (value == null) {
             return "null";
         }
-        return (value instanceof String) ? String.format("\"%s\"", value) : value.toString();
+        return value.toString();
     }
 
     private static String formatPlain(List<DiffItem> diff) {

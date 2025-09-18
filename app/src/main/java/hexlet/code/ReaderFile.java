@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,7 +10,7 @@ import java.util.Scanner;
 
 public class ReaderFile {
 
-    public static String readFile(String filePath) throws Exception {
+    public static String readFile(String filePath) throws IOException {
         try (InputStream input = App.class.getResourceAsStream("/" + filePath)) {
             if (input != null) {
                 try (Scanner scanner = new Scanner(input).useDelimiter("\\A")) {
