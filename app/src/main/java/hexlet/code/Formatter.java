@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import java.util.List;
+import java.util.Map;
 
 public class Formatter {
 
@@ -54,6 +55,9 @@ public class Formatter {
     private static String formatValue(Object value) {
         if (value == null) {
             return "null";
+        }
+        if (value instanceof List || value instanceof Map) {
+            return value.toString();
         }
         return value.toString();
     }
