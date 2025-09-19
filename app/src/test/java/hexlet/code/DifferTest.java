@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DifferTest {
     private static String executedResultStylish;
+    private static String executedResultPlain;
 
     public static Path getAbsolutePath(String fileName) {
         return Paths.get("./src/test/resources/", fileName).toAbsolutePath().normalize();
@@ -26,6 +27,7 @@ public class DifferTest {
     @BeforeAll
     public static void setup() throws IOException {
         executedResultStylish = readFile("expected_result/stylish.txt");
+        executedResultPlain = readFile("expected_result/plain.txt");
     }
 
     @ParameterizedTest
@@ -46,5 +48,15 @@ public class DifferTest {
 
         String actualResult = Differ.generate(file1, file2, "stylish");
         assertEquals(actualResult, executedResultStylish);
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"json", "yaml"})
+    public void testGenerateWithPlainOutput(String inputFormat) throws Exception {
+        var file1 = getAbsolutePath("input_files/input_file1." + inputFormat).toString();
+        var file2 = getAbsolutePath("input_files/input_file2." + inputFormat).toString();
+
+        String actualResult = Differ.generate(file1, file2, "plain");
+        assertEquals(actualResult, executedResultPlain);
     }
 }

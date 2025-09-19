@@ -24,7 +24,7 @@ public class CompareResult {
                 if (areValuesEqual(value1, value2)) {
                     diff.add(new DiffItem(key, value1, value2, "unchanged"));
                 } else {
-                    diff.add(new DiffItem(key, value1, value2, "changed"));
+                    diff.add(new DiffItem(key, value1, value2, "updated"));
                 }
             } else if (inFirst) {
                 diff.add(new DiffItem(key, value1, null, "removed"));
