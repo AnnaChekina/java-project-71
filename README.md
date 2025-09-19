@@ -1,3 +1,5 @@
+# Comparator
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/AnnaChekina/java-project-71/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/AnnaChekina/java-project-71/actions)
 [![Java CI](https://github.com/AnnaChekina/java-project-71/actions/workflows/main.yml/badge.svg)](https://github.com/AnnaChekina/java-project-71/actions/workflows/main.yml)
@@ -10,4 +12,5 @@
 
 [![asciicast](https://asciinema.org/a/MExnAg5dwUAQ65u7agsYi0KUe.svg)](https://asciinema.org/a/MExnAg5dwUAQ65u7agsYi0KUe)
 [![asciicast](https://asciinema.org/a/xsWyX30IAfcQ5a2seht5YwT0N.svg)](https://asciinema.org/a/xsWyX30IAfcQ5a2seht5YwT0N)
-[![asciicast](https://asciinema.org/a/jS6OaQ0N4CIlL6tviwZMfki12.svg)](https://asciinema.org/a/jS6OaQ0N4CIlL6tviwZMfki12)
+[![asciicast](https://asciinema.org/a/HKCA0ulIWEZsWl8pcaAM39wl3.svg)](https://asciinema.org/a/HKCA0ulIWEZsWl8pcaAM39wl3)
+[![asciicast](https://asciinema.org/a/WSyib1Ko4Z5RDtAA1ms68WKbI.svg)](https://asciinema.org/a/WSyib1Ko4Z5RDtAA1ms68WKbI)

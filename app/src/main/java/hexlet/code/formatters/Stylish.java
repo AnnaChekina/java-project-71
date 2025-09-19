@@ -12,7 +12,7 @@ public class Stylish {
 
         for (DiffItem item : diff) {
             switch (item.getStatus()) {
-                case "unchanged":
+                case "same":
                     result.append("    ").append(item.getKey()).append(": ")
                             .append(formatValue(item.getValue1())).append("\n");
                     break;

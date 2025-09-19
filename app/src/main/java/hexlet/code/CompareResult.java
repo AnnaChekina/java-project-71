@@ -22,7 +22,7 @@ public class CompareResult {
 
             if (inFirst && inSecond) {
                 if (areValuesEqual(value1, value2)) {
-                    diff.add(new DiffItem(key, value1, value2, "unchanged"));
+                    diff.add(new DiffItem(key, value1, value2, "same"));
                 } else {
                     diff.add(new DiffItem(key, value1, value2, "updated"));
                 }

@@ -12,7 +12,7 @@ public class Plain {
 
         for (DiffItem item : diff) {
             switch (item.getStatus()) {
-                case "unchanged":
+                case "same":
                     // unchanged properties are not shown in plain format
                     break;
                 case "updated":
