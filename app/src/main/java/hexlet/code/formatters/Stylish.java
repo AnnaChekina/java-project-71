@@ -31,7 +31,7 @@ public class Stylish {
                             .append(formatValue(item.getValue1())).append("\n");
                     break;
                 default:
-                    break;
+                    throw new RuntimeException("Unknown status: '" + item.getStatus() + "'");
             }
         }
 

@@ -30,7 +30,7 @@ public class Plain {
                             .append(item.getStatus()).append("\n");
                     break;
                 default:
-                    break;
+                    throw new RuntimeException("Unknown status: '" + item.getStatus() + "'");
             }
         }
 

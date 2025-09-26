@@ -20,7 +20,7 @@ public class Formatter {
             case "json" -> {
                 return formatJson(diff);
             }
-            default -> throw new RuntimeException("Unsupported output format: " + format);
+            default -> throw new RuntimeException("Unsupported output format: '" + format + "'");
         }
     }
 }

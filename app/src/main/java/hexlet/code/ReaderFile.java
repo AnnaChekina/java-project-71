@@ -22,6 +22,6 @@ public class ReaderFile {
         if (Files.exists(path)) {
             return Files.readString(path);
         }
-        throw new FileNotFoundException("File not found: " + filePath);
+        throw new FileNotFoundException("File not found: '" + filePath + "'");
     }
 }
