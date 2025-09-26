@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.TreeSet;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class CompareResult {
 
@@ -21,7 +22,7 @@ public class CompareResult {
             Object value2 = data2.get(key);
 
             if (inFirst && inSecond) {
-                if (areValuesEqual(value1, value2)) {
+                if (Objects.equals(value1, value2)) {
                     diff.add(new DiffItem(key, value1, value2, "same"));
                 } else {
                     diff.add(new DiffItem(key, value1, value2, "updated"));
@@ -34,15 +35,5 @@ public class CompareResult {
         }
 
         return diff;
-    }
-
-    private static boolean areValuesEqual(Object value1, Object value2) {
-        if (value1 == null && value2 == null) {
-            return true;
-        }
-        if (value1 == null || value2 == null) {
-            return false;
-        }
-        return value1.equals(value2);
     }
 }
