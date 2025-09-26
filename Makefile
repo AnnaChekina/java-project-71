@@ -1,6 +1,9 @@
 build:
 	make -C app build
 
+run-dist:
+	make -C app run-dist ARGS="$(ARGS)"
+
 report:
 	make -C app report
 

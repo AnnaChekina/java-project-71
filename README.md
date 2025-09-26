@@ -9,8 +9,38 @@
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=AnnaChekina_java-project-71&metric=coverage)](https://sonarcloud.io/summary/new_code?id=AnnaChekina_java-project-71)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=AnnaChekina_java-project-71&metric=duplicated_lines_density)](https://sonarcloud.io/summary/new_code?id=AnnaChekina_java-project-71)
 
+CLI utility for finding differences between configuration files (JSON, YAML). Supports multiple output formats.
 
-[![asciicast](https://asciinema.org/a/MExnAg5dwUAQ65u7agsYi0KUe.svg)](https://asciinema.org/a/MExnAg5dwUAQ65u7agsYi0KUe)
-[![asciicast](https://asciinema.org/a/xsWyX30IAfcQ5a2seht5YwT0N.svg)](https://asciinema.org/a/xsWyX30IAfcQ5a2seht5YwT0N)
-[![asciicast](https://asciinema.org/a/HKCA0ulIWEZsWl8pcaAM39wl3.svg)](https://asciinema.org/a/HKCA0ulIWEZsWl8pcaAM39wl3)
-[![asciicast](https://asciinema.org/a/WSyib1Ko4Z5RDtAA1ms68WKbI.svg)](https://asciinema.org/a/WSyib1Ko4Z5RDtAA1ms68WKbI)
+## Setup
+
+```bash
+make build
+```
+
+## Run
+
+```bash
+make run-dist ARGS="file1.json file2.json"
+make run-dist ARGS="file1.yaml file2.yaml -f plain"
+make run-dist ARGS="-h"  # Show help
+```
+
+## Run tests
+
+```bash
+make test
+```
+
+## Run checkstyle
+
+```bash
+make checkstyle
+```
+
+## Output Formats
+
+* stylish - visual tree diff (default)
+* plain - text descriptions
+* json - structured data
+
+[![asciicast](https://asciinema.org/a/PHABICjbZP1ATNcJo8vSDbv6I.svg)](https://asciinema.org/a/PHABICjbZP1ATNcJo8vSDbv6I)
