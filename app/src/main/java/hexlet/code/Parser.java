@@ -8,20 +8,19 @@ import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 public class Parser {
 
-    public static Map<String, Object> parse(String content, String filepath) throws IOException {
-        ObjectMapper mapper = createMapperForFile(filepath);
+    public static Map<String, Object> parse(String content, String format) throws IOException {
+        ObjectMapper mapper = createMapperForFormat(format);
         return mapper.readValue(content, new TypeReference<>() {
         });
     }
 
-    private static ObjectMapper createMapperForFile(String filepath) {
-        if (filepath.toLowerCase().endsWith(".json")) {
+    private static ObjectMapper createMapperForFormat(String format) {
+        if (format.equals("json")) {
             return new ObjectMapper();
-        } else if (filepath.toLowerCase().endsWith(".yaml")
-                || filepath.toLowerCase().endsWith(".yml")) {
+        } else if (format.equals("yaml") || format.equals("yml")) {
             return new ObjectMapper(new YAMLFactory());
         } else {
-            throw new IllegalArgumentException("Unsupported file format: " + filepath);
+            throw new IllegalArgumentException("Unsupported format: '" + format + "'");
         }
     }
 }

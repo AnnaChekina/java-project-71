@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import static hexlet.code.CompareResult.compare;
+import static hexlet.code.FileTypeDetector.getFileType;
 import static hexlet.code.Parser.parse;
 import static hexlet.code.ReaderFile.readFile;
 
@@ -14,8 +15,11 @@ public class Differ {
         String file1Content = readFile(filepath1);
         String file2Content = readFile(filepath2);
 
-        Map<String, Object> file1Parsed = parse(file1Content, filepath1);
-        Map<String, Object> file2Parsed = parse(file2Content, filepath2);
+        String format1 = getFileType(filepath1);
+        String format2 = getFileType(filepath2);
+
+        Map<String, Object> file1Parsed = parse(file1Content, format1);
+        Map<String, Object> file2Parsed = parse(file2Content, format2);
 
         List<DiffItem> diff = compare(file1Parsed, file2Parsed);
 
