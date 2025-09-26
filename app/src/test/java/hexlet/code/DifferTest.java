@@ -1,6 +1,7 @@
 package hexlet.code;
 
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.skyscreamer.jsonassert.JSONAssert;
@@ -11,6 +12,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public final class DifferTest {
     private static String executedResultStylish;
@@ -71,5 +73,13 @@ public final class DifferTest {
 
         String actualResult = Differ.generate(file1, file2, "json");
         JSONAssert.assertEquals(actualResult, executedResultJson, false);
+    }
+
+    @Test
+    public void testUnsupportedFileFormat() {
+        var file1 = getAbsolutePath("input_files/input_file1.txt").toString();
+        var file2 = getAbsolutePath("input_files/input_file2.txt").toString();
+
+        assertThrows(IllegalArgumentException.class, () -> Differ.generate(file1, file2));
     }
 }
